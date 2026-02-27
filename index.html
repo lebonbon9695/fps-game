@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPS Game - Three.js</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+        }
+        
+        #gameContainer {
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        #hud {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border: 2px solid #00ff00;
+            min-width: 200px;
+        }
+        
+        #weaponInfo {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border: 2px solid #00ff00;
+            min-width: 250px;
+        }
+        
+        #crosshair {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            border: 2px solid #00ff00;
+            border-radius: 50%;
+            z-index: 5;
+            pointer-events: none;
+        }
+        
+        #crosshairCenter {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 4px;
+            height: 4px;
+            background-color: #00ff00;
+            border-radius: 50%;
+            z-index: 5;
+            pointer-events: none;
+        }
+        
+        #dummyHealth {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ff0000;
+            font-family: 'Courier New', monospace;
+            font-size: 18px;
+            z-index: 4;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border: 2px solid #ff0000;
+            display: none;
+        }
+        
+        .instructions {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border: 2px solid #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer"></div>
+    <div id="hud">
+        <div>Health: <span id="playerHealth">100</span>/100</div>
+        <div>Ammo: <span id="ammoCount">30</span>/<span id="ammoReserve">120</span></div>
+        <div style="margin-top: 10px; color: #ffff00;">Weapon: <span id="weaponName">Pistol</span></div>
+    </div>
+    
+    <div id="weaponInfo">
+        <div>Current Weapon: <span id="currentWeapon">Pistol</span></div>
+        <div>Damage: <span id="weaponDamage">25</span></div>
+        <div>Fire Rate: <span id="fireRate">0.1s</span></div>
+        <div style="margin-top: 10px; color: #ffff00;">Press 1, 2, 3 to switch weapons</div>
+        <div style="color: #ffff00;">Left Click to shoot | R to reload</div>
+    </div>
+    
+    <div id="crosshair"></div>
+    <div id="crosshairCenter"></div>
+    <div id="dummyHealth">Dummy Health: <span id="dummyHealthValue">100</span>/100</div>
+    
+    <div class="instructions">
+        <div>WASD - Move | Mouse - Look | Space - Jump</div>
+        <div>1,2,3 - Switch Weapons | R - Reload | Left Click - Shoot</div>
+        <div>ESC - Lock/Unlock Pointer</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/Game.js"></script>
+    <script src="js/Player.js"></script>
+    <script src="js/Weapon.js"></script>
+    <script src="js/Dummy.js"></script>
+    <script src="js/GameManager.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
