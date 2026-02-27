@@ -1,0 +1,1 @@
+{\n  \"name\": \"fps-game\",\n  \"version\": \"1.0.0\",\n  \"description\": \"A FPS game using Three.js\",\n  \"main\": \"index.js\",\n  \"scripts\": {\n    \"start\": \"node index.js\"\n  },\n  \"dependencies\": {\n    \"three\": \"^0.140.0\",\n    \"some-game-dev-library\": \"^1.0.0\"\n  }\n}
